@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Foodie - Fresh Bites</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fefdf9;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: linear-gradient(90deg, #2ecc71, #27ae60);
+    }
+    .navbar-brand {
+      font-weight: 800;
+      letter-spacing: 1px;
+      font-size: 1.5rem;
+    }
+    .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #ffd700 !important;
+    }
+
+    /* Hero */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    .hero h1 {
+      font-size: 3.8rem;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 1.3rem;
+    }
+    .btn-hero {
+      background: #27ae60;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      color: white;
+      transition: background 0.3s ease;
+    }
+    .btn-hero:hover {
+      background: #2ecc71;
+    }
+
+    /* Menu Cards */
+    .card {
+      border: none;
+      border-radius: 20px;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.85);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+    .card img {
+      height: 220px;
+      object-fit: cover;
+    }
+    .card-title {
+      font-weight: 600;
+      color: #27ae60;
+    }
+    .btn-order {
+      background: #ffd700;
+      border: none;
+      font-weight: 600;
+      border-radius: 25px;
+      padding: 8px 20px;
+      transition: 0.3s;
+    }
+    .btn-order:hover {
+      background: #f1c40f;
+      color: #fff;
+    }
+
+    /* Testimonials */
+    .testimonial {
+      background: #fff;
+      border-left: 5px solid #27ae60;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    .testimonial:hover {
+      transform: scale(1.03);
+    }
+
+    /* Contact */
+    #contact form {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    #contact button {
+      background: #27ae60;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+    }
+    #contact button:hover {
+      background: #2ecc71;
+    }
+
+    /* Footer */
+    footer {
+      background: #2ecc71;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-3">
+    <div class="container">
+      <a class="navbar-brand" href="#">🍴 Foodie</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero text-center">
+    <div>
+      <h1>Fresh. Healthy. Delicious.</h1>
+      <p>Your favorite meals delivered to your doorstep 🍕🍔🍝</p>
+      <a href="#menu" class="btn-hero mt-3">Explore Menu</a>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section id="menu" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5 fw-bold">Our Menu</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=800" class="card-img-top" alt="Pizza">
+            <div class="card-body text-center">
+              <h5 class="card-title">Pizza</h5>
+              <p class="card-text">Cheesy, fresh, and loaded with toppings.</p>
+              <p class="fw-bold text-dark">₹399</p>
+              <a href="#" class="btn btn-order">Order Now</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <img src="bug.jpg" class="card-img-top" alt="Burger">
+            <div class="card-body text-center">
+              <h5 class="card-title">Burger</h5>
+              <p class="card-text">Juicy, crispy, and finger-licking good.</p>
+              <p class="fw-bold text-dark">₹199</p>
+              <a href="#" class="btn btn-order">Order Now</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <img src="pasta.jpg" class="card-img-top" alt="Pasta">
+            <div class="card-body text-center">
+              <h5 class="card-title">Pasta</h5>
+              <p class="card-text">Creamy Italian pasta with a rich taste.</p>
+              <p class="fw-bold text-dark">₹299</p>
+              <a href="#" class="btn btn-order">Order Now</a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4 fw-bold">What Our Customers Say</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="testimonial">
+            <p>"The food is simply amazing! I ordered pizza and it was delivered hot and fresh."</p>
+            <h6 class="text-success">- Pankaj S.</h6>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="testimonial">
+            <p>"Best burgers in town! Highly recommend this food service."</p>
+            <h6 class="text-success">- Rahul M.</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4 fw-bold">Contact Us</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" placeholder="Enter your name">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" placeholder="Enter your email">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" rows="4" placeholder="Your message..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-3">
+    <p class="mb-0">&copy; 2025 Foodie | Designed with ❤</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
