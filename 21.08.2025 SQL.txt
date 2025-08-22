@@ -1,0 +1,45 @@
+create database Sathyabama;
+use sathyabama;
+create table cse(
+student_id int,student_name varchar(50),student_age int);
+insert into cse (student_id,Student_name,student_age) values
+(43110612,'Nijanthan',19),(43110635,'Pankaj',19);
+select * from cse;
+select * from cse;
+UPDATE cse
+set student_age=21
+where student_id = 43110612;
+alter table cse
+add cgpa int;
+update cse
+set cgpa = 9
+where student_id = 43110635;
+update cse
+set cgpa = 8
+where student_id = 43110620;
+update cse
+set cgpa = 5
+where student_id = 43110656;
+update cse
+set cgpa = 7
+where student_id = 43110612;
+alter table cse
+rename column student_id to register_no;
+insert into cse values
+(43110723,'bharat','CSE',10);
+select register_no,student_name from cse
+where cgpa>7;
+update cse 
+set student_name = 'Sowmiya'
+where register_no = 43110656;
+update cse 
+set department = 'biotech'
+where register_no = 43110656;
+alter table cse
+drop cgpa;
+select*from cse
+order by register_no;
+select*from cse
+order by register_no desc;
+select  department, count(*) from cse 
+group by department;
