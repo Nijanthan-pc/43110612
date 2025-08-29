@@ -1,0 +1,69 @@
+#11 Write an SQL query to print details of the Workers whose SALARY lies between 100000 and 500000.
+ select * from worker
+ where salary between 100000 and 500000;
+
+ 
+ #12. . Write an SQL query to fetch the count of employees working in the department ‘Admin’.
+ select department,count(worker_id) as total_members from worker
+ where department = 'admin'
+ group by department;
+ 
+ #13. Write an SQL query to fetch the no. of workers for each department in the descending order.
+ select department,count(worker_id) as total from worker
+ group by department
+ order by count(worker_id);
+ 
+ #14. Write an SQL query to print details of the Workers who are also Managers. (High Level)
+ select w.worker_id,w.first_name,w.last_name,w.salary,w.joining_date,w.department,t.worker_title from worker w
+ join title t on w.worker_id = t.WORKER_REF_ID
+ where worker_title = 'manager';
+ 
+ #15. Write an SQL query to show only odd rows from a table.
+ select * from worker
+ where (worker_id %2 != 0);
+ 
+ #16 Write an SQL query to show the top 4 records of a table.
+ select * from worker
+ limit 4;
+ 
+ #17. Write an SQL query to fetch the list of employees with the same salary. (High Level)
+ select salary,count(worker_id) from worker
+ group by salary;
+ having count>2;
+ 
+ #18. Write an SQL query to show the second highest salary from a table.
+ select department,max(salary) from worker
+ group by department
+ limit 1 offset 2;
+ 
+ #19. Write an SQL query to show one row twice in results from a worker table.
+ select * from worker
+ union all
+ select * from worker;
+ 
+ #20Write an SQL query to fetch the first 50% records from a table. (without using limit and offset)
+ select * from worker
+ where worker_id<=(select count(*)/2 from worker);
+ 
+ #21Write an SQL query to fetch the departments that have less than five people in it.
+ select department,count(worker_id) as total_members from worker
+ group by department
+ having total_members<5;
+ 
+ #22. Write an SQL query to show all departments along with the number of people in there.
+ select department,count(worker_id) as total_members from worker
+ group by department;
+ 
+ #23. Write an SQL query to show the last record from a table.
+ select * from worker
+ order by worker_id desc
+ limit 1 ;
+ 
+ #24. Write an SQL query to fetch the names of workers who earn the highest salary.
+ select first_name,last_name,salary from worker
+ where salary = (select max(salary) from worker);
+ 
+ #25. Write an SQL query to print the name of employees having the highest salary in each department.
+  select first_name,department,max(salary) from worker
+  where salary = (select max(salary) from worker)
+  group by department,first_name;

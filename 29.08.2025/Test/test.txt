@@ -1,0 +1,44 @@
+#1 Write an SQL query to fetch “FIRST_NAME” from Worker table using the alias name as <WORKER_NAME>.
+ select first_name as WORKER_NAME from worker;
+
+
+
+ #2. Write an SQL query to fetch “FIRST_NAME” from Worker table in upper case.
+ select upper(first_name) as WORKER_NAME_in_Upper_Case from worker;
+
+
+#3. Write an SQL query to fetch unique values of DEPARTMENT from Worker table.
+ select  department from worker union select  department from worker;(case 1)
+ select department from worker group by department;(case 2)
+
+
+#4. Write an SQL query to print the FIRST_NAME from Worker table after removing white spaces from the right side.
+ select rtrim(first_name) as after_removing_white_space from worker;
+
+
+
+#5. Write an SQL query to print all Worker details from the Worker table order by FIRST_NAME Ascending.
+ select * from worker
+ order by first_name asc;
+
+#6 dont know
+
+
+#7. Write an SQL query to print details for Workers with the first name as “Vipul” and “Satish” from Worker table.
+ select * from worker
+ where first_name in ('vipul' ,'satish');
+
+
+#8. Write an SQL query to print details of the Workers whose FIRST_NAME contains ‘a’.
+ select * from worker
+ where first_name like '%a%';
+
+#9. Write an SQL query to print details of the Workers whose FIRST_NAME ends with ‘a’.
+  select * from worker
+ where first_name like '%a';
+
+
+
+#10. Write an SQL query to print details of the Workers whose FIRST_NAME ends with ‘h’ and contains six alphabets.
+ select * from worker
+ where first_name like '%______h';
